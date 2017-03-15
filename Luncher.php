@@ -1,6 +1,6 @@
 <?php
 
-define('BOT_TOKEN', 'TOKEN');
+define('BOT_TOKEN', '258914541:AAE3J15TFI_mE5Cis101CBLqaqFV_C_dzfo');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 
 function apiRequestWebhook($method, $parameters) {
@@ -120,12 +120,12 @@ function processMessage($message) {
   if (isset($message['text'])) {
     // incoming text message
     $text = $message['text'];
-    $admin = 115567529;
+    $admin = array('179980428','142141024');
     $matches = explode(' ', $text);
     $substr = substr($text, 0,7 );
     if (strpos($text, "/start") === 0) {
-        apiRequest("sendMessage", array('chat_id' => $chat_id, 'text' => "سلام 😇👋\n\n👌ربات خود را از @botfather ساخته و به من بده ❤️\n\nآموزش ساخت ربات 👉 /crtoken\n\n📌 توجه داشته بايد با دستور setinline/ در @BotFather قابليت اينلاين ربات خود را نيز فعال كنيد ...","parse_mode"=>"MARKDOWN",'reply_markup' => array(
-        'keyboard' => array(array('🔄 ساخت ربات'),array('☢ حذف ربات')),
+        apiRequest("sendMessage", array('chat_id' => $chat_id, 'text' => "سلام 😇👋\n\n👌ربات خود را از @Botfather ساخته و به من بده ❤️\n\n📌 توجه داشته بايد با دستور setinline/ در @BotFather قابليت اينلاين ربات خود را نيز فعال كنيد ...","parse_mode"=>"MARKDOWN",'reply_markup' => array(
+        'keyboard' => array(array('🔄 ساخت ربات'),array('☢ حذف ربات')),array(array('♻️ نسخه ربات ♻️')),
         'resize_keyboard' => true)));
 
 if (strpos($users , $chat_id) !== false)
@@ -149,13 +149,11 @@ if (strpos($users , $chat_id) !== false)
       apiRequestWebhook("sendMessage", array('chat_id' => $chat_id,  "text" => "تعداد کل ربات های آنلاین  <code>".$tcount."</code>","parse_mode"=>"HTML"));
 
         }
-    }else if ($text == "Version") {
+    }else if ($text == "♻️ نسخه ربات ♻️") {
       apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "<b>xogame</b>
-<b>ver. 3.0</b>
-<code>Coded By</code> @YGBlack
-Copy Right 2016©","parse_mode"=>"html"));	}else if ($text == "/crtoken") {      
-apiRequest("sendMessage", array('chat_id' => $chat_id, 'text' => "[مطالعه](https://telegram.me/FastFlashTM/83)", 'parse_mode' => "Markdown"));
-
+<b>نسخ 1.0</b>
+<code>ساخت شده توسط @This_Is_Pouria</code>
+Copy Right 2016©","parse_mode"=>"html"));
 	}else if ($matches[0] == "/setvip") {
 		$vipidbot =$matches[1];
 		$vipbot =$matches[2];
@@ -170,14 +168,7 @@ apiRequest("sendMessage", array('chat_id' => $chat_id, 'text' => "[مطالعه]
 			apiRequest("sendMessage", array('chat_id' => $membersidd[$y], "text" => $sendtestall,"parse_mode" =>"HTML"));
 		}
 		$memcout = count($membersidd)-1;
-	 	apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "<b>Message Sent To</b> 
-<code>".$memcout."</code>
-<b>Members Sir</b>
-------------------
-<b>پیام به </b> 
-<code>".$memcout."</code>
-<b>نفر ارسال شد</b>
-.","parse_mode" =>"HTML"));
+	 	apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "<code>پیام به ".$memcout" نفر ارسال شد!</code>","parse_mode" =>"HTML"));
     }else if ($matches[0] == "/update"&& strpos($matches[1], ":")) {				
 	apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "در حال برسی توکن دریافتی ... ♻️"));		
 		$id = $message['chat']['id'];
@@ -193,7 +184,7 @@ apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "🚀 ربات 
 
     }else if ($text == "🔙 برگشت") {
       apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "🔃 به منوی اصلی خوش آمدید","parse_mode"=>"Markdown",'reply_markup' => array(
-        'keyboard' => array(array('🔄 ساخت ربات'),array('☢ حذف ربات')),
+        'keyboard' => array(array('🔄 ساخت ربات'),array('☢ حذف ربات')),array(array('♻️ نسخه ربات ♻️')),
         'resize_keyboard' => true)));
 	}else if ($text == "☢ حذف ربات") {
 	if (is_dir($chat_id)) { 
@@ -210,9 +201,9 @@ apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "🚀 ربات 
 	}}else if ($text == "🔄 ساخت ربات") {
       apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "⚙ به بخش ساخت ربات خوش آمدید
 
-جهت ساخت ربات توکن دریافتی از بات فادر را ارسال یا فروارد کنید 🙏.
+جهت ساخت ربات ، توکن دریافتی از بات فادر را ارسال یا فروارد کنید 🙏.
 
-🤖 @PlusTM ","parse_mode"=>"Markdown",'reply_markup' => array(
+🤖 @CyberCH","parse_mode"=>"Markdown",'reply_markup' => array(
         'keyboard' => array(array('🔙 برگشت')),
         'resize_keyboard' => true)));
 	}else if ($matches[0] != "/update" && $matches[1] == "") {
@@ -255,7 +246,7 @@ apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "در حال ب
 برای ورود به ربات خود کلیک کنید 👇😃
 .";
     
-    $bot_url    = "https://api.telegram.org/bot314995812:AAGAw_EMGs-lMGT7ESGtiOCKed-bOnQSsYA/"; 
+    $bot_url    = "https://api.telegram.org/bot".BOT_TOKEN."/"; 
     $url        = $bot_url . "sendMessage?chat_id=" . $chat_id ; 
 
 $post_fields = array('chat_id'   => $chat_id, 
@@ -275,7 +266,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
 $output = curl_exec($ch); 
     
     
-    $textinstall = "ربات شما با موفقیت به سرور XO پلاس تیم متصل شد 📨";
+    $textinstall = "ربات شما با موفقیت فعال شد 📨";
   $install = "http://api.telegram.org/bot".$matches[0]."/sendMessage?chat_id=".$chat_id."&text=".$textinstall;
   $json = file_get_contents($install);
 
@@ -289,7 +280,7 @@ $output = curl_exec($ch);
 🔸ربات دوم = 2000ت ✔️
 
 🤖 در صورت تمایل به ساخت ربات های بیشتر به ایدی زیر پیام دهید.
-🚀 @YGBlackBot"));
+🚀 @IranCyberRobot"));
       }
     }
       
@@ -362,7 +353,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields); 
 
 $output = curl_exec($ch); 
-	$textinstall = "ربات شما با موفقیت به سرور XO پلاس تیم متصل شد 📨";
+	$textinstall = "ربات شما با موفقیت فعال شد 📨";
   $install = "http://api.telegram.org/bot".$matches[0]."/sendMessage?chat_id=".$chat_id."&text=".$textinstall;
   $json = file_get_contents($install);
       }
@@ -373,7 +364,7 @@ $output = curl_exec($ch);
 🔸ربات دوم = 2000ت ✔️
 
 🤖 در صورت تمایل به ساخت ربات های بیشتر به ایدی زیر پیام دهید.
-🚀 @YGBlackBot"));
+🚀 @IranCyberRobot"));
       }
 
     }
@@ -402,7 +393,7 @@ else{
 }
 
 
-define('WEBHOOK_URL', 'https://www.alphaplus.cf/bots/xocreator/');
+define('WEBHOOK_URL', 'https://www.pompile.ir/pouria/XO/');
 
 if (php_sapi_name() == 'cli') {
   // if run from console, set or delete webhook
