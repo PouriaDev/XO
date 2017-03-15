@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 define('BOT_TOKEN', '**TOKEN**');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
@@ -185,8 +185,8 @@ $pmembersid= explode("\n",$txxt);
       apiRequestJson("sendMessage", array('chat_id' => $chat_id, 'text' => $start_file, 'reply_markup' => array(
             "inline_keyboard"=>array(
 				array(array("text"=>"⚜ شروع بازی ⚜","switch_inline_query"=>"شروع")),
-				array(array("text"=>"کانال سازنده 📡","url"=>"https://telegram.me/PlusTM")),
-				array(array("text"=>"🤖 ساخت ربات XO 🤖","url"=>"https://telegram.me/XO_SAZBOT"))
+				array(array("text"=>"کانال سازنده 📡","url"=>"https://telegram.me/CyberCH")),
+				array(array("text"=>"🤖 ساخت ربات XO 🤖","url"=>"https://telegram.me/XoCreationBot"))
 			)
 		)));
 		$txxt = file_get_contents('users.txt');
@@ -236,9 +236,7 @@ $pmembersid= explode("\n",$txxt);
 
 تنها با مبلغ 2,000 تومان ماهانه ربات خود را VIP کنید و لذت ببرید 👌
 برای خرید 💳
-@SudoGP
-
-تیم : @PlusTM"));
+@AlphaCyber"));
 	
 }if($chat_id == $admin && strpos($text, "/panel") === 0){
 		apiRequestJson("sendMessage", array('chat_id' => $admin, 'text' => "به پنل مدیریت ربات خودتون خوش اومدید 🔧", 'reply_markup' => array(
