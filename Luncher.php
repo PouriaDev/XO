@@ -125,7 +125,7 @@ function processMessage($message) {
     $substr = substr($text, 0,7 );
     if (strpos($text, "/start") === 0) {
         apiRequest("sendMessage", array('chat_id' => $chat_id, 'text' => "سلام 😇👋\n\n👌ربات خود را از @Botfather ساخته و به من بده ❤️\n\n📌 توجه داشته بايد با دستور setinline/ در @BotFather قابليت اينلاين ربات خود را نيز فعال كنيد ...","parse_mode"=>"MARKDOWN",'reply_markup' => array(
-        'keyboard' => array(array('🔄 ساخت ربات'),array('☢ حذف ربات')),array(array('♻️ نسخه ربات ♻️')),
+        'keyboard' => array(array('🔄 ساخت ربات'),array('☢ حذف ربات'),array('♻️ نسخه ربات ♻️')),
         'resize_keyboard' => true)));
 
 if (strpos($users , $chat_id) !== false)
@@ -152,7 +152,7 @@ if (strpos($users , $chat_id) !== false)
     }else if ($text == "♻️ نسخه ربات ♻️") {
       apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "<b>xogame</b>
 <b>نسخ 1.0</b>
-<code>ساخت شده توسط @This_Is_Pouria</code>
+<code>ساخت شده توسط @AlphaCyber</code>
 Copy Right 2016©","parse_mode"=>"html"));
 	}else if ($matches[0] == "/setvip") {
 		$vipidbot =$matches[1];
@@ -178,13 +178,13 @@ Copy Right 2016©","parse_mode"=>"html"));
         $phptext = str_replace("**ADMIN**",$chat_id,$phptext);
         file_put_contents($id.'/xogame.php',$phptext);
         file_get_contents('https://api.telegram.org/bot'.$matches[1].'$texttwebhook?url=');
-        file_get_contents('https://api.telegram.org/bot'.$matches[1].'/setwebhook?url=https://alphavps.cf/bots/xocreator/'.$chat_id.'/xogame.php');
+        file_get_contents('https://api.telegram.org/bot'.$matches[1].'/setwebhook?url=https://pompile.ir/pouria/XO/'.$chat_id.'/xogame.php');
 apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "🚀 ربات شما با مـوفقیت آپدیت شد ♻️"));
 
 
     }else if ($text == "🔙 برگشت") {
       apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "🔃 به منوی اصلی خوش آمدید","parse_mode"=>"Markdown",'reply_markup' => array(
-        'keyboard' => array(array('🔄 ساخت ربات'),array('☢ حذف ربات')),array(array('♻️ نسخه ربات ♻️')),
+        'keyboard' => array(array('🔄 ساخت ربات'),array('☢ حذف ربات'),array('♻️ نسخه ربات ♻️')),
         'resize_keyboard' => true)));
 	}else if ($text == "☢ حذف ربات") {
 	if (is_dir($chat_id)) { 
